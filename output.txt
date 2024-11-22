@@ -1,0 +1,2 @@
+these contents are read from the input file and written in output file
+

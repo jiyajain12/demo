@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <sstream>
+using namespace std;
+int main(int args, char *argv[])
+{
+    ofstream MyCsvFileW;
+    MyCsvFileW.open(argv[1]);
+    MyCsvFileW << "First name,last name,middle initital,prn" << endl;
+    MyCsvFileW << "Jiya,Jain,P.,1132230991" << endl;
+    MyCsvFileW << "siya,Jani,K.,1132230982" << endl;
+    MyCsvFileW << "Jigna,shah,P.,1132230887" << endl;
+    MyCsvFileW.close();
+    ifstream MyCsvFileR;
+    MyCsvFileW.open(argv[1]);
+    vector<string> row;
+    string line, word;
+    while (!MyCsvFileR.eof())
+        row.clear();
+    getline(MyCsvFileR, line);
+    stringstream s(line);
+    while (getline(s, word, ','))
+    {
+        row.push_back(word);
+    }
+    cout << row[0];
+    cout << row[1];
+    cout << row[2];
+    cout << row[3];
+    cout << row[4];
+}
+MyCsvFileR.close();
+return 0;
+}
